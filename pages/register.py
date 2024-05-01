@@ -1,8 +1,10 @@
 import streamlit as st
 import re
 
+
 def username_validation(user):
-    bool(re.search(r"[a-zA-Z]", user)) and bool(re.search(r"\d", user))
+    return bool(re.search(r"[a-zA-Z]", user)) and bool(re.search(r"\d", user))
+
 
 st.title("Register")
 
@@ -13,7 +15,7 @@ if username:
     if not username_validation(username):
         st.error("Username must contain letters and numbers")
 
-##
+
 
 
 password = st.text_input("Password", type="password")
